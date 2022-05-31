@@ -59,72 +59,9 @@ body{
     position: relative;
 }
 
-#question{
-    width:500px;
-    height : 125px;
-    position: absolute;
-    right:0;
-    top:0;
-}
-#question p{
-    margin : 0;
-    padding : 15px;
-    font-size: 1.25em;
-}
-
-#choices{
-    width : 480px;
-    position: absolute;
-    right : 0;
-    top : 125px;
-}
-.choice{
-    display: inline-block;
-    width : 220px;
-    text-align: center;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.choice:hover{
-    border : 2px solid grey;
-    font-weight: bold;
-}
-
-#timer{
-    position: absolute;
-    height : 100px;
-    width : 200px;
-    bottom : 0px;
-    text-align: center;
-}
-#counter{
-    font-size: 4em;
-}
-
-#progress{
-    width : 500px;
-    position: absolute;
-    bottom : 10px;
-    right : 10px;
-    text-align: right;
-}
-.prog{
-    width : 25px;
-    height : 25px;
-    display: inline-block;
-    border-radius: 50%;
-    margin-left : 5px;
-    margin-right : 5px;
-}
-
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-}
-
-.price {
-color: grey;
-font-size: 22px;
 }
