@@ -17,7 +17,7 @@ csp = {
         'w3.org'
     ],
     'frame-src': [
-        "https://www.google.com/maps/embed"
+        "https://www.opinionstage.com/api/v1/widgets/1002786/iframe"
     ],
     'img-src': [
         '\'self\'',
@@ -27,7 +27,7 @@ csp = {
 }
 
 Talisman(app, content_security_policy=csp)
-# app.config["SECRET_KEY"] = b"\xa1\x13Ll+\x88(\xa4\x98\xcf\xaa\xd7\x97'*j"
+app.config["SECRET_KEY"] = b"\xa1\x13Ll+\x88(\xa4\xcf\xaa\xd7\x97'*j"
 
 
 
