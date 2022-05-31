@@ -12,6 +12,7 @@ csp = {
         '\'self\'',
         '\'unsafe-inline\'',
         'stackpath.bootstrapcdn.com',
+        'maxcdn.bootstrapcdn.com',
         'code.jquery.com',
         'cdn.jsdelivr.net',
         'w3.org'
