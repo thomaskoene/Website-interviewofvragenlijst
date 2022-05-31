@@ -17,7 +17,7 @@ csp = {
         'w3.org'
     ],
     'frame-src': [
-        "https://www.opinionstage.com/assets/loader.js"
+        "https://www.opinionstage.com/api/v1/widgets/1002786/iframe"
     ],
     'img-src': [
         '\'self\'',
