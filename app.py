@@ -1,36 +1,38 @@
-import os
-import random
-import urllib.request
-import requests
-import json
-
-from cs50 import SQL
-from flask import Flask, flash, jsonify, redirect, render_template, request, session
-from flask_session import Session
-from tempfile import mkdtemp
-from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
-from werkzeug.security import check_password_hash, generate_password_hash
-# from flask_socketio import SocketIO
-
+from flask import Flask, flash, redirect, render_template, request
+from flask_talisman import Talisman
+from flask_sitemap import Sitemap
 # Configure application
 app = Flask(__name__)
+ext = Sitemap(app=app)
+app.config["SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS"] = True
+app.config["SITEMAP_URL_SCHEME"] = "https"
 
-# Ensure templates are auto-reloaded
-app.config["TEMPLATES_AUTO_RELOAD"] = True
+csp = {
+    'default-src': [
+        '\'self\'',
+        '\'unsafe-inline\'',
+        'stackpath.bootstrapcdn.com',
+        'code.jquery.com',
+        'cdn.jsdelivr.net',
+        'w3.org'
+    ],
+    'frame-src': [
+        "https://www.google.com/maps/embed"
+    ],
+    'img-src': [
+        '\'self\'',
+        'https:',
+        'data:'
+    ]
+}
 
-# Ensure responses aren't cached
-@app.after_request
-def after_request(response):
-    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-    response.headers["Expires"] = 0
-    response.headers["Pragma"] = "no-cache"
-    return response
+Talisman(app, content_security_policy=csp)
+# app.config["SECRET_KEY"] = b"\xa1\x13Ll+\x88(\xa4\x98\xcf\xaa\xd7\x97'*j"
 
-# Configure session to use filesystem (instead of signed cookies)
-app.config["SESSION_FILE_DIR"] = mkdtemp()
-app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
+
+
+@app.route("/")
+@app.route("/homescreen")
 
 @app.route("/", methods=["GET"])
 def homescreen():
@@ -42,13 +44,5 @@ def references():
     """Shows references"""
     return render_template("references.html")
 
-def errorhandler(e):
-    """Handle error"""
-    if not isinstance(e, HTTPException):
-        e = InternalServerError()
-    return print(e.name, e.code)
-
-
-# Listen for errors
-for code in default_exceptions:
-    app.errorhandler(code)(errorhandler)
+if __name__ == "__main__":
+    app.run(debug=True)
