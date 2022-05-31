@@ -13,6 +13,7 @@ csp = {
         '\'unsafe-inline\'',
         'stackpath.bootstrapcdn.com',
         'maxcdn.bootstrapcdn.com',
+        'opinionstage.com/',
         'code.jquery.com',
         'cdn.jsdelivr.net',
         'w3.org'
