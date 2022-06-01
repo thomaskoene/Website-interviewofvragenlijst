@@ -5,7 +5,7 @@ from flask_sitemap import Sitemap
 app = Flask(__name__)
 ext = Sitemap(app=app)
 app.config["SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS"] = True
-# app.config["SITEMAP_URL_SCHEME"] = "https"
+app.config["SITEMAP_URL_SCHEME"] = "https"
 
 csp = {
     'default-src': [
