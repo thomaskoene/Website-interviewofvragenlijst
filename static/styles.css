@@ -1,7 +1,8 @@
 
-nav .navbar-brand
+nav .navbar
 {
     /* size for brand */
+    color: black;
     font-size: xx-large;
 }
 
