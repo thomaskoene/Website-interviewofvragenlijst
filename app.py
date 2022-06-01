@@ -41,10 +41,10 @@ def homescreen():
     """Shows homescreen"""
     return render_template("homescreen.html")
 
-@app.route("/references/", methods=["GET"])
-def references():
-    """Shows references"""
-    return render_template("references.html")
+@app.route("/explanation/", methods=["GET"])
+def explanation():
+    """Shows explanation"""
+    return render_template("explanation.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
