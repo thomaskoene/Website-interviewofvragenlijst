@@ -3,7 +3,7 @@ from flask_talisman import Talisman
 from flask_sitemap import Sitemap
 # Configure application
 app = Flask(__name__)
-# ext = Sitemap(app=app)
+ext = Sitemap(app=app)
 # app.config["SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS"] = True
 # app.config["SITEMAP_URL_SCHEME"] = "https"
 
@@ -29,7 +29,7 @@ app = Flask(__name__)
 # }
 
 # Talisman(app, content_security_policy=csp)
-# app.config["SECRET_KEY"] = b"\xa1\x13Ll+\x88(\xa4\xcf\xaa\xd7\x97'*j"
+app.config["SECRET_KEY"] = b"\xa1\x13Ll+\x88(\xa4\xcf\xaa\xd7\x97'*j"
 
 
 
