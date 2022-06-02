@@ -46,5 +46,10 @@ def explanation():
     """Shows explanation"""
     return render_template("explanation.html")
 
+@app.route("/why/", methods=["GET"])
+def why():
+    """Shows why"""
+    return render_template("why.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
