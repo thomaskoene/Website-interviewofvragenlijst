@@ -1,5 +1,4 @@
 Flask
-flask-talisman
 flask-sitemap
 gunicorn
 psycopg2
